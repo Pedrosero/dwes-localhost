@@ -35,6 +35,18 @@
         print"<br/>La ruta del ficherto es: ". Ruta;
         print"<br/><br/>La linea del define es la: ". Linea;
 
+        //Con GETTYPE y SETTYPE podemos obtener y asignar tipos de datos
+        printf("<h2><br/>SETTYPE Y GETTYPE</h2>");
+
+        $b = "1,325";//Asignamos un valor a la variable b
+        print "<br/> 1. El tipo de B es: ". gettype($b);//Obtenemos el tipo de dato que tiene la variable b
+
+        settype($c, "boolean");//Asignamos el tipo de dato de la variable c
+        print"<br/> 2. El tipo de C es: ". gettype($c);//Obtenemos el tipo de dato que tiene la variable c
+
+        print"<br/> 3. El tipo de B es: ". gettype($b);//obtenemos el dato de la variable b
+
+
 
 
     ?>
