@@ -8,6 +8,7 @@
 <body>   
     <?php
         include"7_herencia.php";
+        
         $t = new Libro();
         $t->codigo = 33;
         if ($t instanceof Producto) {
