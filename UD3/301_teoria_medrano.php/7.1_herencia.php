@@ -20,7 +20,7 @@
         echo $objetoPadre->mostrarResumen();     
         if (is_subclass_of($t, 'Producto')) {
             echo "<br>Soy un hijo de Producto";
-        }
+        }  
 
         
 

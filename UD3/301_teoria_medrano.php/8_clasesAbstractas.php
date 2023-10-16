@@ -20,6 +20,8 @@
     class Libro extends Producto {
         public $paginas;
         public $autor;
+
+        public function __construct
     
         public function mostrarResumen() { //obligado a implementarlo
             echo "<p>Código ".$this->getCodigo()."</p>";

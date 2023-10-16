@@ -18,7 +18,7 @@
         function miManejadorErrores($nivel, $mensaje) {
             switch($nivel) {
                 case E_WARNING:
-                    echo "<strong>Warning</strong>: $mensaje.<br/>";
+                    echo "<strong>Advertencia!!!</strong>: $mensaje.<br/>";
                     break;
                 default:
                     echo "Error de tipo no especificado: $mensaje.<br/>";

@@ -10,12 +10,12 @@
         $p1 = new Libro();
         $p1->setNombre("La casa de Bernarda Alba");
         $p1->setAutor("Federico García Lorca");
-        echo $p1;
+        echo $p1"</br>";
         
         // Method chaining
         $p2 = new Libro();
         $p2->setNombre("Niebla")->setAutor("Miguel de Unamuno");
-        echo $p2;
+        echo $p2"</br>";
 
         class Libro {
             private string $nombre;
@@ -41,6 +41,11 @@
                 return $this->nombre." de ".$this->autor;
             }
         }
+
+
+        //ALGUNOS MÉTODOS MÁGICOS
+        echo "<h2>Métodos mágicos</h2>";
+        echo"<h3>To String: </br></h3>
     ?>
 </body>
 </html>

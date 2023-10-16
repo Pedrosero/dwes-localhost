@@ -18,7 +18,7 @@
 
         
         ProductoP1::nuevoProducto();
-        $impuesto = ProductoP2::IVA;
+        $impuesto = ProductoP1::IVA;
 
         class ProductoP2 {
             const IVA = 0.23;

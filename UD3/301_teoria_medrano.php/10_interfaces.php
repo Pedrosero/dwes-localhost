@@ -30,6 +30,7 @@
             // Implementaciones de los métodos
             // Obligatoriamente deberá implementar public function mostrarResumen, mostrarTodo y generarFactura
         }
+    }
     ?>
 </body>
 </html>

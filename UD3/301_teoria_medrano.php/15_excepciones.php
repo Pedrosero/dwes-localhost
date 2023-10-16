@@ -7,14 +7,20 @@
 </head>
 <body>
     <?php
+    $dividendo=10;
+    $divisor=2;
+    //$divisor=0;
         try {
             if ($divisor == 0) {
                 throw new Exception("División por cero.");
             }
             $resultado = $dividendo / $divisor;
+            echo "La división es: ".resultado;// SI ES EL DIVISOR 0 TE SALTA EL ERROR DE QUE ES 0, SI NO ES 0 TE MUESTRA EL RESULTADO
         } catch (Exception $e) {
             echo "Se ha producido el siguiente error: ".$e->getMessage();
         }
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         class HolaExcepcion extends Exception {}
 
@@ -31,11 +37,11 @@
             public function miFuncion() {
                 echo "Una función personalizada para este tipo de excepción\n";
             }
+        }
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
             namespace \Dwes\Ejemplos;
-
             class AppExcepcion extends \Exception {}
-        }
+        
 
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -101,6 +107,7 @@
             throw new AppException("AppException: ".$e->getMessage(), $e->getCode(), $e);
         }
 
+        
     ?>
 </body>
 </html>

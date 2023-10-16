@@ -7,6 +7,7 @@
 </head>
 <body>
     <?php
+
         class Producto {
             public string $codigo;
         
@@ -19,7 +20,7 @@
             }
         }
         
-        class Tv extends Producto {
+        class Libro extends Producto {
             public $paginas;
             public $autor;
         
@@ -31,6 +32,7 @@
         
             public function mostrarResumen() {
                 parent::mostrarResumen();
+                echo"<p>Código: ".$this->codigo."</p>";
                 echo "<p>Libro de ".$this->paginas." escrito por: ".$this->autor."</p>";
             }
         }
