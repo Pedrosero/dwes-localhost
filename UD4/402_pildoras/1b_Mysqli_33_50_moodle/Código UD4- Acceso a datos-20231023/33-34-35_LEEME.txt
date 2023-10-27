@@ -1,0 +1,65 @@
+Videos 33,34,35
+*******************************************
+VIDEO 33
+
+Este video de introdución a Base de Datos, podemos ver las dos formas básicas para el manejo de las mismas 
+estas son las siguientes:
+
+    -> La considerada principal y mas utilizada es mediante el navegador, 
+    con el cual ingresando en la dirección http://localhost/phpmyadmin con el cual accedemos localmente a 
+    la interfaz gráfica, usando el usuario root y el campo de contraseña vacio accedemos a todo el control 
+    gráfico de las BBDD.
+
+    -> Por otro lado, disponemos de una interfaz cmd mediante esta ruta, 
+    C:\>cd wamp\bin\mysql\mysq15.6.17\bin , una vez ya hemos entrado contamos con el control por comandos 
+    para el manejo y control de las diferentes base de datos creadas y por crear.
+
+En la interfaz gráfica es mas sencillo el manejo de las mismas a diferencia de la consola de comandos. 
+En la cual se puede ver comandos como los siguientes:
+
+    -> CREATE DATABASE CURSO_PHP;   (Crear una base de datos nueva)
+    -> SHOW DATABASE;               (Mostrar las bases de datos)
+    -> USE CURSO_PHP;               (Usar Base de datos para modificarla)
+    -> DROP DATABASE CURSO_PHP;     (Borrar la BBDD llamada 'CURSO_P')
+
+*******************************************
+VIDEO 34
+
+Con este video se enseña los comandos mas básicos de control. Usando los siguientes:
+
+ -> CREATE DATABASE USUARIOS;  (Crea la BBDD usuarios)
+
+ -> USE USUARIOS;              (Utiliza la BBDD usuarios)
+
+ -> CREATE TABLE DATOSUSUARIOS (NOMBRE VARCHAR(30), CLAVE VARCHAR(10));   (Se crea una tabla con dos columnas de string (nombre y clave) la primera con 30 caracteres de longitud y la segunda con 10 caracteres de longitud)
+
+ -> DROP TABLE DATOSUSUARIOS;  (utilizada para eliminar la tabla que recien hemos creado)
+
+ -> DESCRIBE DATOSUSUARIOS;    (Para mostrar una descripcion de la tabla usuarios)
+
+ -> DROP DATABASE USUARIOS;    (Finalmente acaba borrando la BBDD usuarios)
+
+Con esto se pueden crear y destruir tanto BBDD como tablas de datos.
+ 
+
+*******************************************
+VIDEO 35
+ Este video contiene:
+
+ -> Manejo consola SQL PHPMyAdmin.
+ -> Crear y eliminar tablas con SQL.
+ -> Crear y eliminar campos con SQL.
+ -> Insertar registros con SQL.
+
+Comandos utilizados, previamente seleccionando la base de datos a usar en la interfaz gráfica:
+
+ -> CREATE TABLE datospersonales (nif VARCHAR(10), nombre VARCHAR(15), apellido VARCHAR(20), edad INT(2));
+ 
+ -> ALTER TABLE datospersonales DROP edad;  (Comando para eliminar columna de datos de la tabla DATOSPERSONALES)
+
+ -> ALTER TABLE datospersonales ADD COLUMN EDAD INT(2);  (Comando para añadir la columna EDAD en la tabla DATOSPERSONALES)
+
+ -> INSERT INTO datospersonales (NIF, NOMBRE, APELLIDO, EDAD) VALUES ("20202020P", "JUAN", "TORRES", "20");      
+ (De este modo introducimos lo que se denomina tupla una nueva fila en la tabla con datos)
+
+ -> SELECT * FROM datospersonales;  (Para obtener todos los datos almacenados en la tabla DATOSPERSONALES)
