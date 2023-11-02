@@ -1,0 +1,11 @@
+Estas son las ventajas y desventajas de las consultas preparadas II:
+
+     -> Insertar registros en la BBDD mediante consultas preparadas.
+     
+     -> VENTAJAS
+        • Evitan inyección SQL
+        • En consultas de tipo INSERT son más rápidas y eficientes.
+
+     -> INCONVENIENTES
+        • Hay que escribir más código.
+        • Hay que conocer nuevas funciones.
