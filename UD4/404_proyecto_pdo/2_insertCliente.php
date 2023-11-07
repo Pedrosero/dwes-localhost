@@ -20,14 +20,18 @@
 <?php
 
 //Todos los atributos de la base de datos con los cuales buscaremos coincidencias.
-$busqueda_cart = $_POST["c_art"];
-$busqueda_seccion = $_POST["seccion"];
-$busqueda_nart = $_POST["n_art"];
-$busqueda_precio = $_POST["precio"];
-$busqueda_fecha = $_POST["fecha"];
-$busqueda_importado = $_POST["importado"];
-$busqueda_porig = $_POST["p_origen"];
+$busqueda_ccli = $_POST["c_cli"];
+$busqueda_nombre = $_POST["nom"];
+$busqueda_correo = $_POST["corr"];
+$busqueda_telefono = $_POST["telf"];
+$busqueda_localidad = $_POST["loc"];
 
+
+echo $busqueda_ccli . "<br>";
+echo $busqueda_nombre . "<br>";
+echo $busqueda_correo . "<br>";
+echo $busqueda_telefono . "<br>";
+echo $busqueda_localidad . "<br>";
 
 try {
     //COMPLETAR
@@ -35,24 +39,24 @@ try {
     $base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $base -> exec("SET CHARACTER SET utf8");
 
-    $sql = "INSERT INTO PRODUCTOS (codigoarticulo, seccion, nombrearticulo, precio, fecha, importado, paisdeorigen) VALUES FALTACOMPLETAR";
+    $sql = "INSERT INTO CLIENTES (codcliente, nombre, correo, telefono, localidad) VALUES (:c_cli,:nom,:corr,:telf,:loc)";
 
+   
  
     $resultado = $base -> prepare($sql);
 
     
-    $resultado -> execute(array(":c_art"=>$busqueda_cart, ":seccion"=>$busqueda_seccion, ":n_art"=>$busqueda_nart,":precio"=>$busqueda_precio, ":fecha"=>$busqueda_fecha, ":importado"=>$busqueda_importado, ":p_orig"=>$busqueda_porig));
+    $resultado -> execute(array(":c_cli"=>$busqueda_ccli, ":nom"=>$busqueda_nombre, ":corr"=>$busqueda_correo,":telf"=>$busqueda_telefono, ":loc"=>$busqueda_localidad));
 
     
     echo "Registro Insertado";
 
-    //
+    
     $resultado->closeCursor();
 
 } catch (Exception $e) {
 
     die('Error: ' . $e->GetMessage());
-
 
 }finally{
 
@@ -61,5 +65,4 @@ try {
 
 ?>
 </body>
-
 </html>

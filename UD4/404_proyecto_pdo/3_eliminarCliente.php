@@ -20,39 +20,30 @@
 <?php
 
 //Todos los atributos de la base de datos con los cuales buscaremos coincidencias.
-$busqueda_cart = $_POST["c_art"];
-$busqueda_seccion = $_POST["seccion"];
-$busqueda_nart = $_POST["n_art"];
-$busqueda_precio = $_POST["precio"];
-$busqueda_fecha = $_POST["fecha"];
-$busqueda_importado = $_POST["importado"];
-$busqueda_porig = $_POST["p_origen"];
+$busqueda_ccli = $_POST["c_cli"];
 
 
 try {
-    //COMPLETAR
+    //Metodo /funcion para conectar mediante pdo con la base de datos de mysql imprimiendo si se ha realizado corectamente o ha fallado.
     $base = new PDO('mysql:host=localhost; dbname=dwes', 'root', '');
     $base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $base -> exec("SET CHARACTER SET utf8");
 
-    $sql = "INSERT INTO PRODUCTOS (codigoarticulo, seccion, nombrearticulo, precio, fecha, importado, paisdeorigen) VALUES FALTACOMPLETAR";
+     $sql = "DELETE FROM clientes WHERE codcliente= :c_cli"; 
 
- 
+    //El resultado de la sentencia sql lo vinculamos a la variable $resultado.
     $resultado = $base -> prepare($sql);
 
-    
-    $resultado -> execute(array(":c_art"=>$busqueda_cart, ":seccion"=>$busqueda_seccion, ":n_art"=>$busqueda_nart,":precio"=>$busqueda_precio, ":fecha"=>$busqueda_fecha, ":importado"=>$busqueda_importado, ":p_orig"=>$busqueda_porig));
+    $resultado -> execute(array(":c_cli"=>$busqueda_ccli));
 
-    
-    echo "Registro Insertado";
+    echo "Cliente con el cod  $busqueda_ccli ELIMINADO";
 
-    //
+    //Se cierra la tabla a la que hemos accedido para ahorra recursos que no se volveran a usar mejorando el rendimiendo de la manquina.
     $resultado->closeCursor();
 
 } catch (Exception $e) {
-
     die('Error: ' . $e->GetMessage());
-
+    
 
 }finally{
 
