@@ -51,6 +51,9 @@ try {
 }
 
 ?>
+<div>
+        <a href="index.html" title="DEL">Volver al index</a>
+    </div>
 </body>
 
 </html>
