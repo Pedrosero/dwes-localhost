@@ -8,7 +8,7 @@
 </head>
 <body>
     <form action="4_resultadosCliente.php" method="post">
-        <label>Buscar: <input type="text" name="buscar"></label>
+        <label>Buscar por el nombre del cliente: <input type="text" name="buscar"></label>
         <input type="submit" name="enviando" value="Dale!">
     </form>
 </body>

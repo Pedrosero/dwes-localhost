@@ -27,12 +27,6 @@ $busqueda_telefono = $_POST["telf"];
 $busqueda_localidad = $_POST["loc"];
 
 
-echo $busqueda_ccli . "<br>";
-echo $busqueda_nombre . "<br>";
-echo $busqueda_correo . "<br>";
-echo $busqueda_telefono . "<br>";
-echo $busqueda_localidad . "<br>";
-
 try {
     //COMPLETAR
     $base = new PDO('mysql:host=localhost; dbname=dwes', 'root', '');

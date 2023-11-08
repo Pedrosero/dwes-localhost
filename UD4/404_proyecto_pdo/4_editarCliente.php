@@ -20,11 +20,11 @@
 <?php
 
 //Todos los atributos de la base de datos con los cuales buscaremos coincidencias.
-$busqueda_ccli = $_POST["c_cli"];
-$busqueda_nombre = $_POST["nom"];
-$busqueda_correo = $_POST["corr"];
-$busqueda_telefono = $_POST["telf"];
-$busqueda_localidad = $_POST["loc"];
+$busqueda_ccli = $_GET["c_cli"];
+$busqueda_nombre = $_GET["nom"];
+$busqueda_correo = $_GET["corr"];
+$busqueda_telefono = $_GET["telf"];
+$busqueda_localidad = $_GET["loc"];
 
 try {
     //Metodo /funcion para conectar mediante pdo con la base de datos de mysql imprimiendo si se ha realizado corectamente o ha fallado.
@@ -32,12 +32,12 @@ try {
     $base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $base -> exec("SET CHARACTER SET utf8");
 
-     $sql = "UPDATE  clientes SET :nom=$busqueda_nombre, :corr=$busqueda_correo, :telf= $busqueda_telefono, :loc= $busqueda_localidad"; 
+     $sql = "UPDATE  clientes SET nombre=:nom, correo=:corr, telefono=:telf, localidad=:loc WHERE codcliente=:c_cli"; 
 
     //El resultado de la sentencia sql lo vinculamos a la variable $resultado.
     $resultado = $base -> prepare($sql);
 
-    $resultado -> execute(array(":nom"=>$busqueda_nombre,":corr"=>$busqueda_correo,":telf"=>$busqueda_telefono,":loc"=>$busqueda_localidad));
+    $resultado -> execute(array("c_cli"=>$busqueda_ccli,":nom"=>$busqueda_nombre,":corr"=>$busqueda_correo,":telf"=>$busqueda_telefono,":loc"=>$busqueda_localidad));
 
     echo"Registro editado<br><br>";
         echo"Información de registro : <br><br>";

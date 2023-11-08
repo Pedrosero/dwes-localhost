@@ -7,7 +7,7 @@
     <title>Curso PHP MySQL. Actualizando registros en BBDD MySql II. Vídeo 46</title>
 </head>
 <body>
-    <form action="3_resultadosCliente.php" method="get">
+    <form action="indexCRUD.php" method="get">
         <label>Buscar: <input type="text" name="buscar"></label>
         <input type="submit" name="enviando" value="Dale!">
     </form>

@@ -21,11 +21,7 @@
 
 //Todos los atributos de la base de datos con los cuales buscaremos coincidencias.
 $busqueda = $_POST["buscar"];
-$busqueda_ccli = $_POST["c_cli"];
-$busqueda_nombre = $_POST["nom"];
-$busqueda_correo = $_POST["corr"];
-$busqueda_telefono = $_POST["telf"];
-$busqueda_localidad = $_POST["loc"];
+
 
 try {
     //Metodo /funcion para conectar mediante pdo con la base de datos de mysql imprimiendo si se ha realizado corectamente o ha fallado.
@@ -33,22 +29,25 @@ try {
     $base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $base -> exec("SET CHARACTER SET utf8");
 
-     $sql = "SELECT * FROM clientes WHERE codcliente LIKE :buscar"; 
+     $sql = "SELECT * FROM clientes WHERE nombre LIKE :buscar"; 
 
     //El resultado de la sentencia sql lo vinculamos a la variable $resultado.
     $resultado = $base -> prepare($sql);
 
     $resultado -> execute(array(":buscar"=>$busqueda));
 
-    echo "<form action='4_editarCliente.php' method='post'>";
-        //NOTA. el campo código no debería ser editable, le añadimos readonly.
-        echo "<input readonly type='text' name='c_cli' value='['codcliente']'><br>";//No se puede modificar
-        echo "<input type='text' name='nom' value='['nombre'] '><br>";//Se puede modificar
-        echo "<input type='text' name='corr' value='['correo'] '><br>";
-        echo "<input type='text' name='tlf' value='['telefono'] '><br>";
-        echo "<input type='text' name='loc' value='['localidad'] '><br>";
-        echo "<input type='submit' name='enviando' value='Actualizar'>";
-        echo "</form>";
+while($row = $resultado -> fetch(PDO::FETCH_ASSOC)) {
+    echo "<form action='4_editarCliente.php' method='get'>";
+    //NOTA. el campo código no debería ser editable, le añadimos readonly.
+    echo "<input readonly type='text' name='c_cli' value=". $row['codcliente']."><br>";//No se puede modificar
+    echo "<input type='text' name='nom' value='".$row['nombre']. "'><br>";//Se puede modificar
+    echo "<input type='text' name='corr' value='".$row['correo']. "'><br>";
+    echo "<input type='text' name='tlf' value='".$row['telefono']. "'><br>";
+    echo "<input type='text' name='loc' value='". $row['localidad']. "'><br>";
+    echo "<input type='submit' name='enviando' value='Actualizar'>";
+    echo "</form>";
+}
+   
        
     
     //Se cierra la tabla a la que hemos accedido para ahorra recursos que no se volveran a usar mejorando el rendimiendo de la manquina.

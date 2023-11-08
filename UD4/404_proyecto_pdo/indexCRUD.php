@@ -12,7 +12,7 @@
 
     //Redigirimos al formulario en el caso de que no esté establecido
     if(!isset($_GET["buscar"]))
-        header('Location: Formulario_Busqueda_paises.php');
+        header('Location: form_buscar_cliente.php');
 
     $nombre = $_GET["buscar"];
     //creamos un objeto de la clase importada en el paso anterior.
