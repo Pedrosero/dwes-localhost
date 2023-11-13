@@ -34,26 +34,16 @@ try {
     $base -> exec("SET CHARACTER SET utf8");
 
     $sql = "INSERT INTO CLIENTES (codcliente, nombre, correo, telefono, localidad) VALUES (:c_cli,:nom,:corr,:telf,:loc)";
-
-   
- 
     $resultado = $base -> prepare($sql);
-
-    
     $resultado -> execute(array(":c_cli"=>$busqueda_ccli, ":nom"=>$busqueda_nombre, ":corr"=>$busqueda_correo,":telf"=>$busqueda_telefono, ":loc"=>$busqueda_localidad));
-
-    
+ 
     echo "Registro Insertado";
-
-    
+  
     $resultado->closeCursor();
 
 } catch (Exception $e) {
-
     die('Error: ' . $e->GetMessage());
-
 }finally{
-
     $base = null;
 }
 

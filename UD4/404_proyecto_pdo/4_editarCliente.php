@@ -52,13 +52,9 @@ try {
 
 } catch (Exception $e) {
     die('Error: ' . $e->GetMessage());
-    
-
 }finally{
-
     $base = null;
 }
-
 ?>
 <div>
         <a href="index.html" title="DEL">Volver al index</a>
