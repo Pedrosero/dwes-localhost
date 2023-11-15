@@ -8,7 +8,7 @@
 <body>
 
     <!--enctype="multipart/form-data" para permitir la carga de archivos. 
-    La acción del formulario (action) está establecida en $_SERVER['PHP_SELF'], que hace referencia al script PHP actual.-->
+    La acción en $_SERVER['PHP_SELF'], que hace referencia al script PHP actual.-->
         <form enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>"  method="POST">
                 Archivo: <input name="archivoEnviado" type="file" />
             <br />
@@ -28,9 +28,8 @@
                     Si el archivo se ha cargado con éxito, se obtiene el nombre original del archivo ($nombre) y se 
                     utiliza move_uploaded_file para mover el archivo a una ubicación específica en el servidor.
                 */
-                move_uploaded_file($_FILES['archivoEnviado']['tmp_name'], "/xampp2/htdocs/dwes-localhost/UD5/subidas{$nombre}");
+                move_uploaded_file($_FILES['archivoEnviado']['tmp_name'], "/xampp/htdocs/dwes/UD5/{$nombre}");
                 echo "<p>Archivo $nombre subido con éxito</p>";
-                
             }
         }
     ?>

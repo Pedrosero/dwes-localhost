@@ -37,7 +37,22 @@
                 *"example.com": Es el dominio para el cual la cookie está disponible. En este caso, la cookie solo está disponible para el dominio "example.com".
                 *1: Es un parámetro booleano (verdadero o falso) que indica si la cookie debe ser enviada solo a través de conexiones seguras (HTTPS). En este caso, se establece en 1, lo que significa verdadero. Esto indica que la cookie debe ser segura y solo se enviará a través de conexiones HTTPS.
                 */
+    
+    
+        
     ?>
+
+        <?php
+        //$accesosPagina = 1;
+        if (isset($_COOKIE['accesos'])) { 
+            $accesosPagina = $_COOKIE['accesos']; // recuperamos una cookie
+            setcookie('accesos', ++$accesosPagina); // le asignamos un valor
+        }
+        else 
+        {setcookie('accesos', "1");}
+
+        echo "<h1>Acceso a la página: $accesosPagina </h1>";
+        ?>
     
 </body>
 </html>
