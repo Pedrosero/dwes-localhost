@@ -29,7 +29,6 @@ if (isset($_SESSION['usuario'])) {
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -39,23 +38,8 @@ if (isset($_SESSION['usuario'])) {
 <body>
 
 <h2>Bienvenido</h2>
-
-<?php if (isset($_SESSION['mensaje_registro'])) : ?>
-    <p style="color: green;"><?php echo $_SESSION['mensaje_registro']; ?></p>
-    <?php unset($_SESSION['mensaje_registro']); ?>
-<?php endif; ?>
-
 <a href="login.php">Iniciar sesión</a><br>
 <a href="registro.php">Registrarse</a>
-
-</body>
-</html>
-
-
-
- 
- 
-
 </body>
 </html>
 
